@@ -13,6 +13,7 @@ body{
     font-family:'Orbitron',sans-serif;
     background: radial-gradient(circle at top left,#0d0d1a,#000 90%);
     color:#00f7ff;
+    overflow-x:hidden;
 }
 
 /* ================= LOADER ================= */
@@ -93,6 +94,7 @@ section{
     opacity:0;
     transform:translateX(-120px);
     transition:1.2s ease;
+    max-width:550px;   /* NAME CUT FIX */
 }
 
 .hero-image{
@@ -109,6 +111,8 @@ section{
 
 .hero-text h1{
     font-size:60px;
+    line-height:1.2;
+    word-wrap:break-word;
     background:linear-gradient(90deg,#00f7ff,#ff00ff);
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
@@ -182,36 +186,50 @@ section{
     margin-bottom:15px;
 }
 
-/* ================= CONTACT ================= */
+/* ================= CONTACT GLASS ================= */
 .contact-container{
     display:flex;
     justify-content:center;
+    align-items:center;
 }
 
 .contact-card{
-    background:rgba(0,0,0,0.6);
-    padding:40px;
+    width:380px;
+    padding:40px 30px;
     border-radius:20px;
-    width:320px;
-    backdrop-filter:blur(10px);
-    box-shadow:0 0 20px rgba(0,247,255,0.2);
+
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,0.15);
+    box-shadow:0 0 30px rgba(0,247,255,0.25);
+
+    transition:0.4s;
 }
 
-.contact-card input,
-.contact-card textarea{
-    width:100%;
-    padding:12px;
-    margin:10px 0;
-    border:none;
-    border-radius:10px;
-    background:rgba(0,0,0,0.4);
+.contact-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 0 40px rgba(0,247,255,0.45);
+}
+
+.contact-card h3{
+    color:#ff00ff;
+    text-align:center;
+    margin-bottom:15px;
+}
+
+.contact-card p{
+    margin:12px 0;
+    font-size:14px;
     color:#00f7ff;
-    font-family:'Orbitron',sans-serif;
+    word-wrap:break-word;
+    overflow-wrap:break-word;
 }
 
-.contact-card textarea{
-    resize:none;
-    height:120px;
+.contact-card i{
+    margin-right:8px;
+    color:#ff00ff;
 }
 
 /* ================= SOCIAL ================= */
@@ -256,7 +274,7 @@ section{
     }
 
     .hero-text h1{
-        font-size:36px;
+        font-size:34px;
     }
 
     .hero-image img{
@@ -270,7 +288,7 @@ section{
 
     .contact-card{
         width:90%;
-        padding:20px;
+        padding:25px;
     }
 }
 
