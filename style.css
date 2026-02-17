@@ -302,4 +302,8 @@ section{
 html{
     scroll-padding-top:100px;
 }
+.contact-card p{
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
 
