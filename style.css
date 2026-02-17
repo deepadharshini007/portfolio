@@ -306,4 +306,8 @@ html{
     word-break: break-word;
     overflow-wrap: break-word;
 }
+.bottom-social a{
+    text-decoration: none;
+    display: inline-block;
+}
 
