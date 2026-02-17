@@ -298,4 +298,26 @@ section{
 }
 html {
     scroll-padding-top: 140px; /* navbar height offset */
+
+}
+/* ================= MOBILE NAVBAR FIX ================= */
+@media(max-width:768px){
+
+    .navbar{
+        top:0;
+        left:0;
+        transform:none;
+        width:100%;
+        border-radius:0;
+        justify-content:center;
+        flex-direction:row;
+        padding:12px;
+        gap:18px;
+        box-shadow:0 0 10px #00f7ff;
+    }
+
+    section{
+        padding-top:100px; /* prevent overlap */
+    }
+
 }
