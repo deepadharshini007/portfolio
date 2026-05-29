@@ -1,14 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Deepadharshini | Portfolio</title>
 
-<link rel="stylesheet" href="style.css">
-
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<style>
+
+/* ================= GOOGLE FONT ================= */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+
+/* ================= GLOBAL ================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Orbitron',sans-serif;
+    background:radial-gradient(circle at top left,#0d0d1a,#000 90%);
+    color:#00f7ff;
+    overflow-x:hidden;
+}
+
+/* ================= LOADER ================= */
+#loader{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.loader-text{
+    font-size:30px;
+    color:#00f7ff;
+    animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+    0%{opacity:0.3;}
+    50%{opacity:1;}
+    100%{opacity:0.3;}
+}
+
+/* ================= NAVBAR ================= */
+.navbar{
+    position:fixed;
+    top:30px;
+    left:50%;
+    transform:translateX(-50%);
+    background:rgba(0,0,0,0.6);
+    padding:14px 40px;
+    border-radius:25px;
+    box-shadow:0 0 20px #00f7ff;
+    display:flex;
+    gap:25px;
+    z-index:1000;
+    backdrop-filter:blur(10px);
+}
+
+.navbar a{
+    color:#00f7ff;
+    text-decoration:none;
+    font-size:14px;
+    transition:0.3s;
+}
+
+.navbar a:hover{
+    color:#ff00ff;
+}
+
+/* ================= SECTIONS ================= */
+section{
+    padding:100px 10%;
+    min-height:100vh;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+    color:#ff00ff;
+    font-size:32px;
+}
+
+/* ================= HERO ================= */
+.hero-container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:40px;
+    min-height:70vh;
+}
+
+.hero-text{
+    max-width:550px;
+}
+
+.hero-text h1{
+    font-size:60px;
+    white-space:nowrap;
+    background:linear-gradient(90deg,#00f7ff,#ff00ff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero-text h3{
+    margin-top:10px;
+    color:white;
+}
+
+.hero-text p{
+    margin-top:20px;
+    line-height:1.6;
+    max-width:500px;
+}
+
+.hero-image img{
+    width:260px;
+    height:260px;
+    object-fit:cover;
+    border-radius:50%;
+    border:4px solid #00f7ff;
+    box-shadow:0 0 25px #00f7ff;
+}
+
+/* ================= BUTTON ================= */
+.btn{
+    display:inline-block;
+    padding:12px 25px;
+    background:linear-gradient(90deg,#00f7ff,#ff00ff);
+    border-radius:10px;
+    color:white;
+    margin-top:20px;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+}
+
+/* ================= SKILLS ================= */
+.card-container{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.card{
+    background:rgba(0,0,0,0.5);
+    padding:30px;
+    border-radius:20px;
+    width:280px;
+    text-align:center;
+    backdrop-filter:blur(10px);
+    box-shadow:0 0 15px rgba(0,247,255,0.2);
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 25px #00f7ff;
+}
+
+/* ================= PROJECTS ================= */
+.project-wrapper{
+    display:flex;
+    justify-content:center;
+    gap:50px;
+    flex-wrap:wrap;
+}
+
+.project-card{
+    width:340px;
+    background:rgba(0,0,0,0.5);
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 0 15px rgba(0,247,255,0.2);
+    transition:0.4s;
+}
+
+.project-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 25px #00f7ff;
+}
+
+.project-img{
+    width:100%;
+    border-radius:15px;
+    margin-bottom:15px;
+}
+
+/* ================= CONTACT ================= */
+.contact-card{
+    width:420px;
+    max-width:90%;
+    padding:40px 35px;
+    border-radius:25px;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,0.15);
+    box-shadow:
+    0 0 25px rgba(0,255,255,0.15),
+    inset 0 0 10px rgba(255,255,255,0.05);
+    margin:auto;
+}
+
+.contact-card h2{
+    text-align:center;
+    color:#ff00c8;
+    margin-bottom:25px;
+}
+
+.contact-item{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin:15px 0;
+    font-size:18px;
+}
+
+.contact-item span{
+    word-break:break-word;
+}
+
+/* ================= SOCIAL ================= */
+.bottom-social{
+    margin-top:40px;
+    text-align:center;
+}
+
+.bottom-social a{
+    color:#00f7ff;
+    font-size:30px;
+    margin:0 15px;
+    transition:0.3s;
+    text-decoration:none;
+}
+
+.bottom-social a:hover{
+    color:#ff00ff;
+    transform:scale(1.2);
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+
+    .navbar{
+        top:0;
+        left:0;
+        width:100%;
+        transform:none;
+        border-radius:0;
+        justify-content:space-around;
+        padding:14px 10px;
+        gap:10px;
+    }
+
+    body{
+        padding-top:80px;
+    }
+
+    .hero-container{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .hero-text h1{
+        font-size:34px;
+    }
+
+    .hero-image img{
+        width:180px;
+        height:180px;
+    }
+
+    .project-wrapper{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .project-card{
+        width:90%;
+    }
+
+    .card{
+        width:90%;
+    }
+
+    .contact-card{
+        width:90%;
+        padding:25px;
+    }
+}
+
+</style>
 
 </head>
 
@@ -28,7 +328,7 @@
     <a href="#contact">Contact</a>
 </div>
 
-<!-- Home -->
+<!-- HOME -->
 <section id="home">
 
 <div class="hero-container">
@@ -58,7 +358,7 @@ Download Resume
 
 </section>
 
-<!-- Skills -->
+<!-- SKILLS -->
 <section id="skills">
 
 <h2 class="section-title">My Skills</h2>
@@ -78,14 +378,14 @@ Download Resume
 
 </section>
 
-<!-- Projects -->
+<!-- PROJECTS -->
 <section id="projects">
 
 <h2 class="section-title">Projects</h2>
 
 <div class="project-wrapper">
 
-<div class="card">
+<div class="project-card">
 
 <a href="project.pdf" target="_blank">
 <img src="food.jpg" class="project-img" alt="Project">
@@ -99,7 +399,7 @@ Food ordering web application with admin panel.
 
 </div>
 
-<div class="card">
+<div class="project-card">
 
 <a href="project.pdf" target="_blank">
 <img src="food.jpg" class="project-img" alt="Project">
@@ -117,7 +417,7 @@ Booking rehab recovery classes with highly accessible design.
 
 </section>
 
-<!-- Education -->
+<!-- EDUCATION -->
 <section id="education">
 
 <h2 class="section-title">Education</h2>
@@ -148,12 +448,10 @@ Booking rehab recovery classes with highly accessible design.
 
 </section>
 
-<!-- Contact -->
+<!-- CONTACT -->
 <section id="contact">
 
 <h2 class="section-title">Contact Me</h2>
-
-<div class="contact-container">
 
 <div class="contact-card">
 
@@ -176,20 +474,18 @@ Booking rehab recovery classes with highly accessible design.
 
 </div>
 
-</div>
-
-<!-- Social Media -->
+<!-- SOCIAL -->
 <div class="bottom-social">
 
-<a href="https://www.instagram.com/_.https._deepa" target="_blank" aria-label="Instagram">
+<a href="https://www.instagram.com/_.https._deepa" target="_blank">
 <i class="fab fa-instagram"></i>
 </a>
 
-<a href="https://github.com/deepadharshini007" target="_blank" aria-label="GitHub">
+<a href="https://github.com/deepadharshini007" target="_blank">
 <i class="fab fa-github"></i>
 </a>
 
-<a href="https://www.linkedin.com/in/your-linkedin-id" target="_blank" aria-label="LinkedIn">
+<a href="https://www.linkedin.com/" target="_blank">
 <i class="fab fa-linkedin"></i>
 </a>
 
@@ -197,7 +493,14 @@ Booking rehab recovery classes with highly accessible design.
 
 </section>
 
-<script src="script.js"></script>
+<script>
+
+/* LOADER */
+window.addEventListener("load",function(){
+    document.getElementById("loader").style.display="none";
+});
+
+</script>
 
 </body>
 </html>
