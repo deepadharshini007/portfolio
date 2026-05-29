@@ -11,7 +11,7 @@
 
 body{
     font-family:'Orbitron',sans-serif;
-    background: radial-gradient(circle at top left,#0d0d1a,#000 90%);
+    background:radial-gradient(circle at top left,#0d0d1a,#000 90%);
     color:#00f7ff;
     overflow-x:hidden;
 }
@@ -40,7 +40,7 @@ body{
     100%{opacity:0.3;}
 }
 
-/* ================= NAVBAR DESKTOP ================= */
+/* ================= NAVBAR ================= */
 .navbar{
     position:fixed;
     top:30px;
@@ -53,7 +53,7 @@ body{
     display:flex;
     gap:25px;
     z-index:1000;
-    backdrop-filter: blur(10px);
+    backdrop-filter:blur(10px);
 }
 
 .navbar a{
@@ -109,6 +109,7 @@ section{
     transform:translateX(0);
 }
 
+/* NAME FIX */
 .hero-text h1{
     font-size:60px;
     line-height:1.2;
@@ -156,7 +157,7 @@ section{
     transform:scale(1.05);
 }
 
-/* ================= CARDS ================= */
+/* ================= CARD ================= */
 .card-container{
     display:flex;
     flex-wrap:wrap;
@@ -168,7 +169,7 @@ section{
     background:rgba(0,0,0,0.5);
     padding:30px;
     border-radius:20px;
-    width:280px;
+    width:320px;
     text-align:center;
     backdrop-filter:blur(10px);
     box-shadow:0 0 15px rgba(0,247,255,0.2);
@@ -186,16 +187,16 @@ section{
     margin-bottom:15px;
 }
 
-/* ================= PROJECTS FIX ================= */
+/* ================= PROJECT FIX ================= */
 .project-wrapper{
     display:flex;
     justify-content:center;
     align-items:stretch;
-    gap:40px;
-    flex-wrap:wrap;
+    gap:50px;
+    flex-wrap:nowrap;
 }
 
-/* ================= CONTACT GLASS ================= */
+/* ================= CONTACT ================= */
 .contact-card{
     width:420px;
     max-width:90%;
@@ -295,6 +296,7 @@ section{
     .project-wrapper{
         flex-direction:column;
         align-items:center;
+        gap:30px;
     }
 
     .contact-card{
@@ -303,7 +305,7 @@ section{
     }
 }
 
-/* ================= SCROLL ANIMATION ================= */
+/* ================= SCROLL ================= */
 .hidden{
     opacity:0;
     transform:translateY(80px);
