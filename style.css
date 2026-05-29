@@ -94,7 +94,7 @@ section{
     opacity:0;
     transform:translateX(-120px);
     transition:1.2s ease;
-    max-width:550px;   /* NAME CUT FIX */
+    max-width:550px;
 }
 
 .hero-image{
@@ -112,7 +112,7 @@ section{
 .hero-text h1{
     font-size:60px;
     line-height:1.2;
-    word-wrap:break-word;
+    white-space:nowrap;
     background:linear-gradient(90deg,#00f7ff,#ff00ff);
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
@@ -186,47 +186,55 @@ section{
     margin-bottom:15px;
 }
 
+/* ================= PROJECTS FIX ================= */
+.project-wrapper{
+    display:flex;
+    justify-content:center;
+    align-items:stretch;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
 /* ================= CONTACT GLASS ================= */
-.contact-card {
-    width: 420px;              /* width increased */
-    max-width: 90%;
-    padding: 40px 35px;
-    border-radius: 25px;
+.contact-card{
+    width:420px;
+    max-width:90%;
+    padding:40px 35px;
+    border-radius:25px;
 
-    /* Glassmorphism */
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
 
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border:1px solid rgba(255,255,255,0.15);
 
     box-shadow:
-        0 0 25px rgba(0, 255, 255, 0.15),
-        inset 0 0 10px rgba(255, 255, 255, 0.05);
+    0 0 25px rgba(0,255,255,0.15),
+    inset 0 0 10px rgba(255,255,255,0.05);
 
-    margin: auto;
-    color: #00f7ff;
+    margin:auto;
+    color:#00f7ff;
 }
 
-.contact-card h2 {
-    text-align: center;
-    color: #ff00c8;
-    margin-bottom: 25px;
+.contact-card h2{
+    text-align:center;
+    color:#ff00c8;
+    margin-bottom:25px;
 }
 
-.contact-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-    margin: 15px 0;
-    font-size: 18px;
+.contact-item{
+    display:flex;
+    align-items:flex-start;
+    gap:15px;
+    margin:15px 0;
+    font-size:18px;
 }
 
-/* IMPORTANT — prevents email overflow */
-.contact-item span {
-    word-break: break-word;
-    overflow-wrap: anywhere;
+.contact-item span{
+    word-break:break-word;
+    overflow-wrap:anywhere;
 }
+
 /* ================= SOCIAL ================= */
 .bottom-social{
     margin-top:40px;
@@ -234,6 +242,8 @@ section{
 }
 
 .bottom-social a{
+    text-decoration:none;
+    display:inline-block;
     font-size:28px;
     margin:0 15px;
     color:#00f7ff;
@@ -270,6 +280,7 @@ section{
 
     .hero-text h1{
         font-size:34px;
+        white-space:nowrap;
     }
 
     .hero-image img{
@@ -279,6 +290,11 @@ section{
 
     .card{
         width:90%;
+    }
+
+    .project-wrapper{
+        flex-direction:column;
+        align-items:center;
     }
 
     .contact-card{
@@ -302,12 +318,8 @@ section{
 html{
     scroll-padding-top:100px;
 }
-.contact-card p{
-    word-break: break-word;
-    overflow-wrap: break-word;
-}
-.bottom-social a{
-    text-decoration: none;
-    display: inline-block;
-}
 
+.contact-card p{
+    word-break:break-word;
+    overflow-wrap:break-word;
+}
